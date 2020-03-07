@@ -1,0 +1,427 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:pic12f1840
+LIBS:ws2812b
+LIBS:daisy-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Daisy Chain Servo PIC Controller"
+Date "18 Feb 2020"
+Rev "v1.0"
+Comp "www.siliconjunction.info"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L PIC12F1840 U1
+U 1 1 5E4A975E
+P 5350 2775
+F 0 "U1" H 5450 2825 60  0000 C CNN
+F 1 "PIC12F1840" H 6650 725 60  0000 C CNN
+F 2 "SMD_Packages:SOIC-8-N" H 5350 2775 60  0001 C CNN
+F 3 "" H 5350 2775 60  0001 C CNN
+	1    5350 2775
+	1    0    0    -1  
+$EndComp
+$Comp
+L Conn_01x04 J1
+U 1 1 5E4A9807
+P 2675 2800
+F 0 "J1" V 2775 2925 50  0000 C CNN
+F 1 "Port A" V 2775 2650 50  0000 C CNN
+F 2 "MyMod:XH2.5_Angled_1x04" H 2675 2800 50  0001 C CNN
+F 3 "" H 2675 2800 50  0001 C CNN
+	1    2675 2800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Conn_01x04 J2
+U 1 1 5E4A9832
+P 3550 2800
+F 0 "J2" V 3650 2925 50  0000 C CNN
+F 1 "Port B" V 3650 2650 50  0000 C CNN
+F 2 "MyMod:XH2.5_Angled_1x04" H 3550 2800 50  0001 C CNN
+F 3 "" H 3550 2800 50  0001 C CNN
+	1    3550 2800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Conn_01x05 J4
+U 1 1 5E4A9884
+P 9300 2850
+F 0 "J4" H 9300 3150 50  0000 C CNN
+F 1 "ICSP" H 9300 2550 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x05_Pitch2.54mm" H 9300 2850 50  0001 C CNN
+F 3 "" H 9300 2850 50  0001 C CNN
+	1    9300 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L WS2812B D1
+U 1 1 5E4AA0AB
+P 8225 3675
+F 0 "D1" H 8225 3725 60  0000 C CNN
+F 1 "WS2812B" H 8225 3225 60  0000 C CNN
+F 2 "LEDs:LED_WS2812B-PLCC4" H 8225 3675 60  0001 C CNN
+F 3 "" H 8225 3675 60  0000 C CNN
+	1    8225 3675
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C2
+U 1 1 5E4AA1B8
+P 8175 4925
+F 0 "C2" H 8200 5025 50  0000 L CNN
+F 1 "0.1uF" H 8200 4825 50  0000 L CNN
+F 2 "Capacitors_SMD:C_1206_HandSoldering" H 8213 4775 50  0001 C CNN
+F 3 "" H 8175 4925 50  0001 C CNN
+	1    8175 4925
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C3
+U 1 1 5E4AA1F3
+P 8475 4925
+F 0 "C3" H 8500 5025 50  0000 L CNN
+F 1 "0.1uF" H 8500 4825 50  0000 L CNN
+F 2 "Capacitors_SMD:C_1206_HandSoldering" H 8513 4775 50  0001 C CNN
+F 3 "" H 8475 4925 50  0001 C CNN
+	1    8475 4925
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C4
+U 1 1 5E4AA218
+P 8875 4925
+F 0 "C4" H 8900 5025 50  0000 L CNN
+F 1 "0.1uF" H 8900 4825 50  0000 L CNN
+F 2 "Capacitors_SMD:C_1206_HandSoldering" H 8913 4775 50  0001 C CNN
+F 3 "" H 8875 4925 50  0001 C CNN
+	1    8875 4925
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP C1
+U 1 1 5E4AA241
+P 9325 4925
+F 0 "C1" H 9350 5025 50  0000 L CNN
+F 1 "10uF/12V" H 9350 4825 50  0000 L CNN
+F 2 "Capacitors_SMD:C_1206_HandSoldering" H 9363 4775 50  0001 C CNN
+F 3 "" H 9325 4925 50  0001 C CNN
+	1    9325 4925
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR01
+U 1 1 5E4AA52C
+P 7800 4650
+F 0 "#PWR01" H 7800 4500 50  0001 C CNN
+F 1 "+5V" H 7800 4790 50  0000 C CNN
+F 2 "" H 7800 4650 50  0001 C CNN
+F 3 "" H 7800 4650 50  0001 C CNN
+	1    7800 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR02
+U 1 1 5E4AA644
+P 7800 5225
+F 0 "#PWR02" H 7800 4975 50  0001 C CNN
+F 1 "GND" H 7800 5075 50  0000 C CNN
+F 2 "" H 7800 5225 50  0001 C CNN
+F 3 "" H 7800 5225 50  0001 C CNN
+	1    7800 5225
+	1    0    0    -1  
+$EndComp
+$Comp
+L Conn_01x02 J5
+U 1 1 5E4AA66C
+P 7375 5425
+F 0 "J5" V 7475 5450 50  0000 C CNN
+F 1 "Prog" V 7475 5275 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 7375 5425 50  0001 C CNN
+F 3 "" H 7375 5425 50  0001 C CNN
+	1    7375 5425
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	9325 5125 9325 5075
+Wire Wire Line
+	7475 5125 9325 5125
+Wire Wire Line
+	7800 5125 7800 5225
+Wire Wire Line
+	8175 5075 8175 5125
+Connection ~ 8175 5125
+Wire Wire Line
+	8475 5075 8475 5125
+Connection ~ 8475 5125
+Wire Wire Line
+	8875 5075 8875 5125
+Connection ~ 8875 5125
+Wire Wire Line
+	7475 5225 7475 5125
+Connection ~ 7800 5125
+Wire Wire Line
+	9325 4775 9325 4700
+Wire Wire Line
+	9325 4700 7800 4700
+Wire Wire Line
+	7800 4700 7800 4650
+Wire Wire Line
+	8175 4775 8175 4700
+Connection ~ 8175 4700
+Wire Wire Line
+	8475 4775 8475 4700
+Connection ~ 8475 4700
+Wire Wire Line
+	8875 4775 8875 4700
+Connection ~ 8875 4700
+Wire Wire Line
+	7375 5225 7375 3175
+Wire Wire Line
+	7250 3175 8275 3175
+Wire Wire Line
+	7250 3275 7525 3275
+Wire Wire Line
+	7525 3275 7525 3925
+Wire Wire Line
+	7525 3925 7675 3925
+$Comp
+L GND #PWR03
+U 1 1 5E4AAC19
+P 8925 4000
+F 0 "#PWR03" H 8925 3750 50  0001 C CNN
+F 1 "GND" H 8925 3850 50  0000 C CNN
+F 2 "" H 8925 4000 50  0001 C CNN
+F 3 "" H 8925 4000 50  0001 C CNN
+	1    8925 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR04
+U 1 1 5E4AAC43
+P 7675 3725
+F 0 "#PWR04" H 7675 3575 50  0001 C CNN
+F 1 "+5V" H 7675 3865 50  0000 C CNN
+F 2 "" H 7675 3725 50  0001 C CNN
+F 3 "" H 7675 3725 50  0001 C CNN
+	1    7675 3725
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7675 3725 7675 3825
+Wire Wire Line
+	8775 3825 8925 3825
+Wire Wire Line
+	8925 3825 8925 4000
+Wire Wire Line
+	2575 3000 2575 3125
+Wire Wire Line
+	2300 3125 3450 3125
+Wire Wire Line
+	3450 3125 3450 3000
+$Comp
+L +5V #PWR05
+U 1 1 5E4ABC86
+P 2300 3050
+F 0 "#PWR05" H 2300 2900 50  0001 C CNN
+F 1 "+5V" H 2300 3190 50  0000 C CNN
+F 2 "" H 2300 3050 50  0001 C CNN
+F 3 "" H 2300 3050 50  0001 C CNN
+	1    2300 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 3050 2300 3125
+Connection ~ 2575 3125
+Wire Wire Line
+	2675 3000 2675 3200
+Wire Wire Line
+	2675 3200 4600 3200
+Wire Wire Line
+	3550 3200 3550 3000
+Wire Wire Line
+	2775 3000 2775 3275
+Wire Wire Line
+	2775 3275 4700 3275
+Wire Wire Line
+	3650 3275 3650 3000
+Wire Wire Line
+	2875 3000 2875 3350
+Wire Wire Line
+	2300 3350 3750 3350
+Wire Wire Line
+	3750 3350 3750 3000
+$Comp
+L GND #PWR06
+U 1 1 5E4ABD7F
+P 2300 3425
+F 0 "#PWR06" H 2300 3175 50  0001 C CNN
+F 1 "GND" H 2300 3275 50  0000 C CNN
+F 2 "" H 2300 3425 50  0001 C CNN
+F 3 "" H 2300 3425 50  0001 C CNN
+	1    2300 3425
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 3425 2300 3350
+Connection ~ 2875 3350
+Wire Wire Line
+	3025 4025 3025 3350
+Connection ~ 3025 3350
+Wire Wire Line
+	3125 4025 3125 3125
+Connection ~ 3125 3125
+Wire Wire Line
+	7250 3375 7250 5000
+Wire Wire Line
+	7250 5000 3600 5000
+Wire Wire Line
+	3600 5000 3600 3925
+Wire Wire Line
+	3600 3925 3225 3925
+Wire Wire Line
+	3225 3925 3225 4025
+$Comp
+L GND #PWR07
+U 1 1 5E4AC246
+P 4925 4750
+F 0 "#PWR07" H 4925 4500 50  0001 C CNN
+F 1 "GND" H 4925 4600 50  0000 C CNN
+F 2 "" H 4925 4750 50  0001 C CNN
+F 3 "" H 4925 4750 50  0001 C CNN
+	1    4925 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR08
+U 1 1 5E4AC270
+P 4950 4100
+F 0 "#PWR08" H 4950 3950 50  0001 C CNN
+F 1 "+5V" H 4950 4240 50  0000 C CNN
+F 2 "" H 4950 4100 50  0001 C CNN
+F 3 "" H 4950 4100 50  0001 C CNN
+	1    4950 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 4100 4950 4175
+Wire Wire Line
+	4950 4175 5050 4175
+Wire Wire Line
+	5050 4675 4925 4675
+Wire Wire Line
+	4925 4675 4925 4750
+$Comp
+L Conn_01x03 J3
+U 1 1 5E4AC530
+P 3125 4225
+F 0 "J3" V 3225 4100 50  0000 C CNN
+F 1 "Servo" V 3225 4325 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x03_Pitch2.54mm" H 3125 4225 50  0001 C CNN
+F 3 "" H 3125 4225 50  0001 C CNN
+	1    3125 4225
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4700 3275 4700 2625
+Wire Wire Line
+	4700 2625 7350 2625
+Wire Wire Line
+	7350 2625 7350 2875
+Wire Wire Line
+	7250 2875 8050 2875
+Connection ~ 3650 3275
+Wire Wire Line
+	4600 3200 4600 2525
+Wire Wire Line
+	4600 2525 7450 2525
+Wire Wire Line
+	7450 2525 7450 2975
+Wire Wire Line
+	7250 2975 7950 2975
+Connection ~ 3550 3200
+Wire Wire Line
+	9100 2650 8275 2650
+Wire Wire Line
+	8275 2650 8275 3175
+Connection ~ 7375 3175
+$Comp
+L +5V #PWR09
+U 1 1 5E4ACC54
+P 8925 2525
+F 0 "#PWR09" H 8925 2375 50  0001 C CNN
+F 1 "+5V" H 8925 2665 50  0000 C CNN
+F 2 "" H 8925 2525 50  0001 C CNN
+F 3 "" H 8925 2525 50  0001 C CNN
+	1    8925 2525
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR010
+U 1 1 5E4ACC7E
+P 8950 3150
+F 0 "#PWR010" H 8950 2900 50  0001 C CNN
+F 1 "GND" H 8950 3000 50  0000 C CNN
+F 2 "" H 8950 3150 50  0001 C CNN
+F 3 "" H 8950 3150 50  0001 C CNN
+	1    8950 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8925 2525 8925 2750
+Wire Wire Line
+	8925 2750 9100 2750
+Wire Wire Line
+	9100 2850 8950 2850
+Wire Wire Line
+	8950 2850 8950 3150
+Wire Wire Line
+	9100 2950 8050 2950
+Wire Wire Line
+	8050 2950 8050 2875
+Connection ~ 7350 2875
+Wire Wire Line
+	9100 3050 7950 3050
+Wire Wire Line
+	7950 3050 7950 2975
+Connection ~ 7450 2975
+NoConn ~ 7250 3075
+$EndSCHEMATC
